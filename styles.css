@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    background: #3b3b3b;
+    position: relative;
+}
+
+.act-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(12px,2vw,34px);
+    color: #ffffff;
+    text-align: center;
+    letter-spacing: 2px;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, calc(-50% - 190px));
+    white-space: nowrap;
+}
+
+/* Body of the clock */
+
+.icon-large {
+    width: 340px;
+    height: 340px;
+    border-radius: 75px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.icon-clock {
+    overflow: hidden;
+    background: #dde1e7;
+    border-radius: 50%;
+    box-shadow: -3px -3px 7px #ffffff73, 2px 2px 5px rgba(94, 104, 121, 0.288);
+}
+
+.clock {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: #f1f1f1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: inset 2px 2px 5px #babecc, inset -5px -5px 10px #ffffff73;
+}
+
+.clock ol {
+    list-style-type: none;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+.clock ol li {
+    counter-increment: labelCounter;
+    position: absolute;
+    font-size: 1.25em;
+}
+
+/* Clock numbers */
+
+.clock ol li:before {
+    font-family: “Helvetica”;
+    content: counter(labelCounter) “”;
+}
+
+.clock ol li:nth-child(1) {
+    right: 81px;
+    top: 38px;
+}
+
+.clock ol li:nth-child(2) {
+    right: 38px;
+    top: 81px;
+}
+
+.clock ol li:nth-child(3) {
+    right: 23px;
+    top: 138px;
+}
+
+.clock ol li:nth-child(4) {
+    right: 38px;
+    top: 196px;
+}
+
+.clock ol li:nth-child(5) {
+    right: 81px;
+    top: 238px;
+}
+
+.clock ol li:nth-child(6) {
+    right: 144px;
+    top: 253px;
+}
+
+.clock ol li:nth-child(7) {
+    right: 210px;
+    top: 238px;
+}
+
+.clock ol li:nth-child(8) {
+    right: 248px;
+    top: 196px;
+}
+
+.clock ol li:nth-child(9) {
+    right: 264px;
+    top: 138px;
+}
+
+.clock ol li:nth-child(10) {
+    right: 242px;
+    top: 81px;
+}
+
+.clock ol li:nth-child(11) {
+    right: 198px;
+    top: 38px;
+}
+
+.clock ol li:nth-child(12) {
+    right: 140px;
+    top: 23px;
+}
+
+@-webkit-keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Clock hands */
+
+#hour {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #303030;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -7px;
+    margin-left: -7px;
+}
+
+#hour:before, #hour:after {
+    content: "";
+    display: block;
+    position: absolute;
+}
+
+#hour:before {
+    width: 8px;
+    height: 70px;
+    border-radius: 4px;
+    background: #303030;
+    position: absolute;
+    bottom: 2px;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+#min {
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: #303030;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+#min:before, #min:after {
+    content: "";
+    display: block;
+    position: absolute;
+}
+
+#min:before {
+    width: 6px;
+    height: 98px;
+    border-radius: 4px;
+    background: #303030;
+    position: absolute;
+    bottom: 2px;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+#sec {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #dd3e1c;
+    border: 2px solid #e13e1b;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -4px;
+    margin-left: -4px;
+}
+
+#sec:before, #sec:after {
+    content: "";
+    display: block;
+    position: absolute;
+}
+
+#sec:before {
+    width: 2px;
+    height: 122px;
+    border-radius: 4px;
+    background: #e13e1b;
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
